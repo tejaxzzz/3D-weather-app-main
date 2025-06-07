@@ -174,7 +174,8 @@ button {
 }
 
 .today h2 {
-  color: rgb(234, 234, 110);
+  color: rgb(255, 255, 0);
+
 }
 
 .today-detail {
@@ -301,3 +302,11 @@ button {
 }
 
 
+@media (hover: hover) and (pointer: fine) {
+  .future-day:hover {
+    transform: scale(1.03);
+    border: 2px solid green;
+    background: rgba(55, 55, 55, 0.8);
+    box-shadow: 0 0 5px 1px green;
+  }
+}
