@@ -263,13 +263,13 @@ button {
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
-
+/* 
 .future-day:hover {
   transform: scale(1.03);
   border: 2px solid green;
   background: rgba(55, 55, 55, 0.8);
   box-shadow: 0 0 5px 1px green;
-}
+} */
 
 /* === RESPONSIVENESS === */
 
