@@ -79,11 +79,11 @@ const guiStyle = gui.domElement.style;
 guiStyle.position = 'fixed';
 guiStyle.top = '8px';
 guiStyle.right = '8px';
-guiStyle.width = '110px';
+// guiStyle.width = '110px';
 guiStyle.zIndex = '10000';
 guiStyle.cursor = 'pointer'; // For toggle-like feel
 // Set the width manually instead of auto
-gui.domElement.style.width = '140px';  // Adjust to desired width
+// gui.domElement.style.width = '160px';  // Adjust to desired width
 
 
 
