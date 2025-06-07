@@ -1,0 +1,303 @@
+/* Shrink only the title part (🌍tweaks) */
+.dg.ac {
+  width: 140px !important; /* Set width specifically for compactness */
+  font-size: 12px !important;
+  position: fixed !important;
+  top: 10px !important;
+  right: 10px !important;
+  z-index: 9999 !important;
+  opacity: 0.95;
+}
+
+/* Compact the title (🌍tweaks) */
+.dg .title {
+  font-size: 10px !important;
+  padding: 4px 6px !important;
+  line-height: 1.2 !important;
+  height: 18px !important;
+}
+
+/* Keep sliders and controls full-size */
+.dg .cr {
+  font-size: 13px !important;
+  padding: 6px 8px !important;
+}
+
+.dg .property-name {
+  font-size: 13px !important;
+  width: auto !important;
+  white-space: nowrap !important;
+}
+
+.dg input[type="text"],
+.dg select,
+.dg .slider {
+  font-size: 12px !important;
+}
+
+/* Make adjustments for smaller screens (Mobile) */
+@media (max-width: 768px) {
+  .dg.ac {
+    width: 120px !important;
+    font-size: 11px !important;
+  }
+
+  .dg .title {
+    font-size: 9px !important;
+  }
+
+  .dg .cr {
+    font-size: 12px !important;
+  }
+}
+
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: black;
+  font-family: sans-serif;
+  /* cursor: none; */
+}
+
+/* EARTH CANVAS */
+canvas.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* MOUSE TRAIL CANVAS */
+canvas.c-mouse-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+}
+
+/* === MAIN LAYOUT === */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+/* === FORM SECTION === */
+form {
+  background: rgba(95, 95, 95, 0.7);
+  width: 100%;
+  max-width: 600px;
+  min-height: 43px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 0 10px;
+  gap: 0.7rem;
+  z-index: 10;
+  position: relative;
+}
+
+form > i {
+  color: #fff;
+}
+
+#input {
+  background: none;
+  border: none;
+  width: 100%;
+  font-size: 16px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+#input:focus {
+  outline: none;
+}
+
+button {
+  background-color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* === TODAY'S WEATHER === */
+.today {
+  width: 100%;
+  max-width: 800px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  color: #f7f5f5;
+  gap: 10px;
+  z-index: 10;
+  position: relative;
+}
+
+.today-center {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.today-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.today-left {
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+.today h2 {
+  color: rgb(234, 234, 110);
+}
+
+.today-detail {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+
+
+
+/* 🔽 Mobile Portrait & Landscape: compact form & today */
+@media (max-width: 768px) {
+  form {
+    margin-top: 40px; 
+    max-width: 95%;
+    min-height: 38px;
+    padding: 0 6px;
+    gap: 0.3rem;
+  }
+
+  #input {
+    font-size: 14px;
+  }
+
+  button {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+
+  .today {
+    max-width: 95%;
+    padding: 6px;
+    gap: 6px;
+  }
+
+  .today-center {
+    font-size: 15px;
+  }
+
+  .today-info,
+  .today-detail {
+    font-size: 0.75rem;
+  }
+
+  .today-left {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+/* === FUTURE FORECAST === */
+.future {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 900px;
+  padding: 0.5rem;
+  z-index: 10;
+  position: relative;
+}
+
+.future-day {
+  flex: 1 1 calc(25% - 0.5rem);
+  min-width: 80px;
+  max-width: 160px;
+  background: rgba(95, 95, 95, 0.7);
+  border: 1px solid #fff;
+  border-radius: 8px;
+  padding: 6px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.2);
+  transition: transform 0.2s ease, border 0.2s ease;
+  font-size: 1.4rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.future-day:hover {
+  transform: scale(1.03);
+  border: 2px solid green;
+  background: rgba(55, 55, 55, 0.8);
+  box-shadow: 0 0 5px 1px green;
+}
+
+/* === RESPONSIVENESS === */
+
+/* Tablet & Mobile Portrait: 2x2 layout */
+@media (max-width: 768px) and (orientation: portrait) {
+  .future-day {
+    flex: 1 1 calc(50% - 0.5rem);
+    max-width: 48%;
+    font-size: 0.75rem;
+    padding: 3px;
+  }
+}
+
+/* Mobile Landscape: 4 mini boxes */
+@media (max-width: 768px) and (orientation: landscape) {
+  .future-day {
+    flex: 1 1 calc(25% - 0.5rem);
+    max-width: 23%;
+    font-size: 0.65rem;
+    padding: 2px;
+  }
+}
+
+/* Ultra small screens */
+@media (max-height: 400px) {
+  .future-day {
+    font-size: 0.6rem;
+    padding: 1px;
+  }
+}
+
+
